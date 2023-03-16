@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+       <label for="tname"><b>employee Name</b></label>
+       <input type="text" value="{{employee_details.e_name}}" size="24" name="ename"><br><br>
+
+       <label for="temail"><b>Email</b></label>
+       <input type="text" value="{{employee_details.e_email}}" name="eemail"><br><br>
+
+       <label for="tbirthday">DOB</label>
+       <input type="date" value="{{employee_details.dob}}" id="birthday" name="ebirthday"><br><br>
+       <!-- <input type="date" id="start" name="trip-start" value="2018-07-22" min="2018-01-01" max="2018-12-31"> -->
+
+       <!-- <label>address</label>
+       <textarea rows="20" colam="100" name="taddress"></textarea><br><br> -->
+
+       <label>Qulification</label>
+      <select name="equlification">
+          <option selected disabled> select</option>
+          <option value="qone">10</option>
+          <option value="qtwo">12</option>
+          <option value="qthree" selected>Any degree</option>
+      </select><br><br>
+
+      <label>Gender</label>
+      <input type="radio" name="egender" value="m" checked><label>male</label>
+      <input type="radio" name="egender" value="f"><label>female</label><br><br>
+
+      <label><b>experience</b></label><br />
+      <input name="experience" type="number" value="{{employee_details.e_experience}}" maxlength="100"><br><br>
+
+      <label>phnumber</section></label>
+      <input type="number" name="phnumber" value="{{employee_details.e_phone}}" multiple><br><br>
+
+       <button type="submit" name="btn1" value="submit" >submit</button>
+
+   </form>   
+   {{error_message}}
+ 
+</body>
+</html>

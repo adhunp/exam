@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if employee_details %}
+    <table style="width:100%">
+        <tr>
+            <th>id_no</th>
+            <th>team name</th>
+            <th>project name</th>
+            <th>leader name</th>
+            <th>employee name</th>
+            <th>Delete</th>
+            {% comment %} 
+            
+            {% endcomment %}
+            
+            
+        </tr>
+        {% for employee in employee_details %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{employee.leadername.team_name}}</td>
+            <td>{{employee.p_name}}</td>
+            <td>{{employee.leadername.leader.e_name}}</td>
+            <td>{{employee.employee.e_name}}</td>
+            <td><a href="{% url 'leader:del_emp' employee.id %}">Delete</a></td>
+            {% comment %}
+            {% endcomment %}
+
+        </tr>
+        {% endfor %}
+    </table>
+    <span>{{status}}</span>
+    {% else %}
+    <h1>no data</h1>
+    {% endif %}
+
+    <style>
+        table, th, td {
+                        border: 1px solid black;
+                        /* border-collapse: collapse; */
+                        /* height: 150px; */
+
+                      }
+    </style>
+
+{{error_message}}
+</body>
+</html>

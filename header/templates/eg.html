@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+       <!-- <label for="temail"><b>Project Name</b></label>
+       <input type="text" name="pname"><br><br> -->
+
+       <label>Team Leader</label>
+                <select name="lname" id="cars">
+                    {% for emp in det %}
+                      <option value="{{emp.id}}">{{emp.hr}}</option>
+                    {% endfor %}   
+                </select><br>
+
+       <button type="submit" name="btn1" >submit</button>
+
+   </form> 
+</body>
+</html>

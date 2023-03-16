@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <table border="2">
+        <tr>
+            <th>e_id</th>
+            <th>ename</th>
+            <th>email</th>
+            <th>dob</th>
+            <th>qualification</th>
+            <th>gender</th>
+            <th>experience</th>
+            <th>phnumber</th>
+            
+        </tr>
+        {% for employee in employee_list %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{employee.e_name}}</td>
+            <td>{{employee.e_email}}</td>
+            <td>{{employee.e_dob}}</td>
+            <td>{{employee.e_qualification}}</td>
+            <td>{{employee.e_gender}}</td>
+            <td>{{employee.e_experience}} year{{employee.e_experience|pluralize}}</td>
+            <td>{{employee.e_phone}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="2">
+        <tr>
+            <th>e_id</th>
+            <th>team</th>
+            <th>project name</th>
+            <th>leader</th>
+            <th>employee</th>
+            
+        </tr>
+        {% for employee in employee_list %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{employee.leadername.team_name}}</td>
+            <td>{{employee.p_name}}</td>
+            <td>{{employee.leadername.leader.e_name}}</td>
+            <td>{{employee.employee.e_name}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</body>
+</html>
